@@ -1,6 +1,5 @@
 import streamlit as st
 from gtts import gTTS
-from IPython.display import Audio, display
 
 def text_to_speech(text, lang):
     tts = gTTS(text=text, lang=lang, slow=False)
@@ -16,3 +15,4 @@ if st.button("آواز میں تبدیل کریں"):
     lang_code = 'ur' if language.lower() == 'urdu' else 'en'
     audio_file = text_to_speech(user_input, lang_code)
     st.audio(audio_file, format='audio/mp3')
+
